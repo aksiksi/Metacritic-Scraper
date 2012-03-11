@@ -26,7 +26,7 @@ def file(path):
         current = output[g]
         f.write("{0} on {1}: ".format(g, c) + '\n')
         if 'Game' not in current:
-            f.write('\n- Metascore is: ' + current[0] + '\n')
+            f.write('\n- Metascore is: ' + str(current[0]) + '\n')
             f.write('- Userscore is: ' + str(current[1]) + '\n')
             f.write('- Combined score is: ' + str(current[2]) + '\n')
             f.write('\n\n')
@@ -130,7 +130,7 @@ def scrape(game_console):
             index = source.find('"v:average">')
             index += len('"v:average">')
             try:
-                float(meta_score = source[index] + source[index+1])
+                meta_score = float(source[index] + source[index+1])
             except ValueError:
                 meta_score = 'Not available'
 
