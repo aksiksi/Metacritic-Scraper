@@ -12,6 +12,7 @@ def file(path):
         game_console[''.join(arr[0])] = (''.join(arr[2])).rstrip('\n')
     f.close()
     
+    # Start timer
     s = time.time()
     
     output = scrape(game_console)
@@ -86,8 +87,6 @@ def csv(path):
     
     # Write results to file
     f = open('scores.csv', 'w')
-    #f.write('Metacritic Score Grabber v0.1 - Output\r')
-    #f.write('\r')
     f.write('Game,Console,Metascore,Userscore,Combined Score\r')
     
     for g, c in game_console.items():
@@ -157,7 +156,7 @@ def scrape(game_console):
 print "\nMetacritic Score Grabber v0.1"
 print "-----------------------------\n"
 
-# If no argument provided, assume its -here
+# If no argument provided, assume it's -here
 try:
     param = argv[1]
 except IndexError:
