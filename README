@@ -1,11 +1,11 @@
 Metacritic Score Scraper v0.1
 -----------------------------
 
-Accepted command line arguments: -c, -f, -h (default), or -help
+Accepted command line arguments: -csv, -text, -out (default), or -help
 
--c: reads input from csv (game,console) and writes to a new csv
--f: reads input from file (game:console) and writes to a new file
--h: prompts user to enter data (game:console) and outputs to terminal
+-csv: reads input from csv (game,console) and writes to a new csv
+-text: reads input from file (game:console) and writes to a new file
+-out: prompts user to enter data (game:console) and outputs to terminal
 -help: prints this info on screen
 
 Written by Assil Ksiksi

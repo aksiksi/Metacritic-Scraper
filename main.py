@@ -87,18 +87,20 @@ def csv(path):
     
     # Write results to file
     f = open('scores.csv', 'w')
-    f.write('Game,Console,Metascore,Userscore,Combined Score\r')
-    
+    f.write('Game,Console,Metascore,Userscore,Combined Score\r') # Table headers
+
     for g, c in game_console.items():
         current = output[g]
         f.write("{0},{1},".format(g, c))
         if 'Game' not in current:
-            f.write(str(current[0]) + ',')
             if current[0] == 'Not available':
+                f.write('N/A,')
+            else:
+                f.write(str(current[0]) + ',')
+            if current[1] == 'Not available':
                 f.write('N/A,N/A\r')
             else:
-                f.write(str(current[1]) + ',')
-                f.write(str(current[2]) + '\r')
+                f.write(str(current[1]) + ',' + str(current[2]) + '\r')
         else:
             f.write('-,-,-\r')
     f.close()
@@ -118,7 +120,7 @@ def scrape(game_console):
         Http = httplib2.Http()
         source = Http.request("http://www.metacritic.com/game/{0}/{1}".format(c.replace(' ', '-').lower(), g.replace(' ', '-').lower()))[1]
 
-        # Checks if game name and/or console name is correct.
+        # Checks if game name and/or console name is correct
         if '<span class="error_type">Page Not Found</span>' in source:
             count += 1
             print "{0} of {1} failed...".format(count, total)
@@ -127,7 +129,10 @@ def scrape(game_console):
             # Finds metascore
             index = source.find('"v:average">')
             index += len('"v:average">')
-            meta_score = source[index] + source[index+1]
+            try:
+                float(meta_score = source[index] + source[index+1])
+            except ValueError:
+                meta_score = 'Not available'
 
             # Finds userscore
             index = source.find('"score_value">')
@@ -156,28 +161,28 @@ def scrape(game_console):
 print "\nMetacritic Score Grabber v0.1"
 print "-----------------------------\n"
 
-# If no argument provided, assume it's -h
+# If no argument provided, assumes it's -out
 try:
     param = argv[1]
 except IndexError:
-    param = '-h'
+    param = '-out'
 
 # Argument selection
-if param == '-c':
+if param == '-csv':
     try:
         csv(argv[2])
     except IndexError:
         print "Invalid usage. Please use -help or refer to comments at the top of the script for usage info.\n"
-elif param == '-f':
+elif param == '-text':
     try:
         file(argv[2])
     except IndexError:
         print "Invalid usage. Please use -help or refer to comments at the top of the script for usage info.\n"
-elif param == '-h':
+elif param == '-out':
     console()
 elif param == '-help':
     print "Accepted parameters: -csv, -file, -here, or -help:\n"
-    print "-c: reads input from csv (game,console) and writes to a new csv."
-    print "-f: reads input from file (game:console) and writes to a new file."
-    print "-h: prompts to enter data (game:console) and outputs to terminal. If no argument is entered, -h will be assumed."
+    print "-csv: reads input from csv (game,console) and writes to a new csv."
+    print "-text: reads input from file (game:console) and writes to a new file."
+    print "-out: prompts to enter data (game:console) and outputs to terminal. If no argument is entered, -out will be assumed."
     print "-help: prints this info on screen.\n"
