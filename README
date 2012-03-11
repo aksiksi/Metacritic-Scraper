@@ -1,0 +1,15 @@
+Metacritic Score Scraper v0.1
+-----------------------------
+
+Accepted command line arguments: -csv, -file, -here (default), or -help
+
+-csv: reads input from csv (game,console) and writes to a new csv
+-file: reads input from file (game:console) and writes to a new file
+-here: prompts user to enter data (game:console) and outputs to terminal
+-help: prints this info on screen
+
+Written by Assil Ksiksi
+
+Note: to run this, you'll need httplib2. Get it from here:
+
+http://code.google.com/p/httplib2/
