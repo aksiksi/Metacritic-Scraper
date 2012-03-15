@@ -16,12 +16,12 @@ if param == '-csv':
     try:
         module.csv(argv[2])
     except IndexError:
-        print "Invalid usage. Please use -help or refer to comments at the top of the script for usage info.\n"
+        print "Invalid usage. Please use -help or refer to readme provided for usage info.\n"
 elif param == '-text':
     try:
         module.file(argv[2])
     except IndexError:
-        print "Invalid usage. Please use -help or refer to comments at the top of the script for usage info.\n"
+        print "Invalid usage. Please use -help or refer to readme provided for usage info.\n"
 elif param == '-out':
     module.console()
 elif param == '-help':
