@@ -1,5 +1,5 @@
-Metacritic Score Scraper v0.1
------------------------------
+Metacritic Score Scraper v0.1 - Written by Assil Ksiksi
+-------------------------------------------------------
 
 Accepted command line arguments: -csv, -text, -out (default), or -help
 
@@ -8,7 +8,7 @@ Accepted command line arguments: -csv, -text, -out (default), or -help
 -out: prompts user to enter data (game:console) and outputs to terminal
 -help: prints this info on screen
 
-Written by Assil Ksiksi
+Make sure that module.py is in the same directory as main before running, because most of the script's logic is in module.py.
 
 Note: to run this, you'll need httplib2. Get it from here:
 
