@@ -30,3 +30,5 @@ elif param == '-help':
     print "-text: reads input from file (game:console) and writes to a new file."
     print "-out: prompts to enter data (game:console) and outputs to terminal. If no argument is entered, -out will be assumed."
     print "-help: prints this info on screen.\n"
+else:
+    print "Unknown argument. Please use -help or refer to the readme if you don't know what to use.\n"
