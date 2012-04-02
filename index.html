@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Metacritic Scraper by Cyph0n</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Metacritic Scraper</h1>
+        <p>Scrapes game scores from Metacritic. Allows input/output to .txt, .csv, and the console. </p>
+        <p class="view"><a href="https://github.com/Cyph0n/Metacritic-Scraper">View the Project on GitHub <small>Cyph0n/Metacritic-Scraper</small></a></p>
+        <ul>
+          <li><a href="https://github.com/Cyph0n/Metacritic-Scraper/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/Cyph0n/Metacritic-Scraper/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/Cyph0n/Metacritic-Scraper">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>Metacritic Scraper</h2>
+
+<p>A simple-to-use script that scrapes Metacritic for game scores. It is coded in Python, and uses no external libraries save for httplib2. The script can receive input from the console, a text file, or a CSV, and can output to the same formats.</p>
+
+<p>Improvements shall be made as time goes on, however the author will most likely convert this script into a web application using either Flask, Bottle.py, or Django. </p>
+
+<h3>Usage</h3>
+
+<p>The four acceptable command-line arguments are shown below:</p>
+
+<pre><code>python main.py -out
+python main.py -csv &lt;location of csv file&gt;
+python main.py -text &lt;location of text file&gt;
+python main.py -help
+</code></pre>
+
+<h3>Input and Output</h3>
+
+<p>The script accepts the following input formats:</p>
+
+<ol>
+<li><p>A text file containing the names of games and consoles, one on each line, separated by a colon (game:console).</p></li>
+<li><p>A CSV containing two columns: the first listing the names of games; the second listing the games' respective consoles.</p></li>
+<li><p>Input into the console (or terminal) in the same form as text file input.</p></li>
+</ol><h3>Support or Contact</h3>
+
+<p>You can find me on Twitter (<a href="/Cyph0n" class="user-mention">@Cyph0n</a>) or on my <a href="http://cyph0n.tumblr.com/">blog</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/Cyph0n">Cyph0n</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
